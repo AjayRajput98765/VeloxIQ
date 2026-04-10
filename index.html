@@ -11,7 +11,7 @@
 :root {
   --bg:#05101e;
   --bg-alt:#081628;
-  --bg-card:#0e2040;
+  --bg-card:linear-gradient(145deg,#ffffff,#f0f4ff);
   --bg-dark:#05101e;
   --ink:#f4f9ff;
   --dim:#cce0f5;
@@ -155,8 +155,66 @@ section{position:relative;z-index:1}
 .r.in{opacity:1;transform:translateY(0)}
 
 /* CARD BASE */
-.c3{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .3s;will-change:transform}
-.c3:hover{box-shadow:var(--shh);border-color:rgba(59,130,246,.25);transform:translateY(-4px)}
+.c3{background:var(--bg-card);border:1px solid rgba(59,130,246,.15);border-top:2px solid rgba(59,130,246,.35);border-radius:var(--r);box-shadow:0 2px 8px rgba(0,0,0,.08),0 12px 32px rgba(0,0,0,.10);position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .3s;will-change:transform}
+.c3:hover{box-shadow:0 6px 20px rgba(59,130,246,.15),0 24px 60px rgba(59,130,246,.12);border-color:rgba(59,130,246,.4);border-top-color:rgba(59,130,246,.7);transform:translateY(-4px)}
+/* ===== LIGHT CARD OVERRIDES ===== */
+/* Headings */
+.c3 .pst,.c3 .svt,.c3 .acn,.c3 .wt,.c3 .tn,.c3 .pprice,.c3 .tq-name{color:#0f172a}
+.c3 .ptier{color:#64748b}
+/* Body / description text */
+.c3 .psd,.c3 .svd,.c3 .acd,.c3 .wb,.c3 .tb,.c3 .psn,.c3 .tq-text,.c3 .tq-role,.c3 .psub,.c3 .acc{color:#475569}
+/* List items */
+.c3 .pfl li,.c3 .acf li{color:#374151;border-bottom-color:rgba(0,0,0,.08)}
+.c3 .pfl li:hover,.c3:hover .acf li{color:#0f172a}
+/* Dividers / borders */
+.c3 .prul{background:rgba(0,0,0,.10)}
+.c3 .ach{border-bottom-color:rgba(0,0,0,.10) !important}
+.c3 .tq-author{border-top-color:rgba(0,0,0,.10) !important}
+/* Role / category labels */
+.c3 .tr{color:#2563eb}
+/* Watermark numbers */
+.c3 .wnum{color:rgba(0,0,0,.05)}
+.c3 .pg-num{color:rgba(0,0,0,.05)}
+/* Icon backgrounds on light cards */
+.c3 .psi,.c3 .si,.c3 .ace,.c3 .wiwrap{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+/* Tags — base */
+.c3 .tag{background:rgba(59,130,246,.09);border-color:rgba(59,130,246,.22);color:#1d4ed8}
+/* Tags — per-service (override nth-child specificity) */
+.c3.sv:nth-child(1) .tag{background:rgba(59,130,246,.09);border-color:rgba(59,130,246,.22);color:#1d4ed8}
+.c3.sv:nth-child(2) .tag{background:rgba(124,58,237,.09);border-color:rgba(124,58,237,.22);color:#5b21b6}
+.c3.sv:nth-child(3) .tag{background:rgba(20,184,166,.09);border-color:rgba(20,184,166,.22);color:#0f766e}
+.c3.sv:nth-child(4) .tag{background:rgba(245,158,11,.09);border-color:rgba(245,158,11,.22);color:#92400e}
+.c3.sv:nth-child(5) .tag{background:rgba(99,102,241,.09);border-color:rgba(99,102,241,.22);color:#3730a3}
+.c3.sv:nth-child(6) .tag{background:rgba(244,63,94,.09);border-color:rgba(244,63,94,.22);color:#9f1239}
+/* Avatar colors */
+.c3 .av-a{background:rgba(59,130,246,.12);color:#1d4ed8}
+.c3 .av-b{background:rgba(124,58,237,.12);color:#6d28d9}
+/* Stack / integration pills */
+.c3 .sp{background:#f1f5f9;border-color:#e2e8f0;color:#475569}
+/* Agent price badge */
+.c3 .acp{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+.c3.ac:nth-child(1) .acp{background:rgba(59,130,246,.09);border-color:rgba(59,130,246,.22);color:#1d4ed8}
+.c3.ac:nth-child(2) .acp{background:rgba(16,185,129,.09);border-color:rgba(16,185,129,.22);color:#065f46}
+.c3.ac:nth-child(3) .acp{background:rgba(124,58,237,.09);border-color:rgba(124,58,237,.22);color:#5b21b6}
+.c3.ac:nth-child(4) .acp{background:rgba(245,158,11,.09);border-color:rgba(245,158,11,.22);color:#92400e}
+.c3.ac:nth-child(5) .acp{background:rgba(244,63,94,.09);border-color:rgba(244,63,94,.22);color:#9f1239}
+.c3.ac:nth-child(6) .acp{background:rgba(20,184,166,.09);border-color:rgba(20,184,166,.22);color:#0f766e}
+.c3:hover .acp{background:#3b82f6 !important;border-color:#3b82f6 !important;color:#fff !important}
+/* Pricing widget box */
+.c3 .ppw{background:rgba(59,130,246,.05);border-color:rgba(59,130,246,.15)}
+.c3.pc.feat .ppw{background:rgba(59,130,246,.10);border-color:rgba(59,130,246,.25)}
+/* Pricing CTA button (ghost) */
+.c3 .pcg{background:#f8fafc;border:1.5px solid #cbd5e1;color:#0f172a}
+.c3 .pcg:hover{background:#e2e8f0;border-color:#94a3b8;transform:translateY(-2px)}
+/* Demo terminal — keep dark so it reads like a real terminal */
+.c3 .demo{background:#1e293b;border-color:rgba(255,255,255,.08)}
+.c3 .dbar{background:rgba(255,255,255,.05);border-bottom-color:rgba(255,255,255,.07)}
+.c3 .dtit{color:#94a3b8}
+.c3 .dtxt{color:#cbd5e1}
+.c3 .dtxt.hi{color:#60a5fa;font-weight:600}
+.c3 .drole{color:#60a5fa;opacity:.8}
+/* Active status dot */
+.c3 .astat{color:#059669}
 .c3 .sh{position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.85),transparent 60%);pointer-events:none;z-index:10;opacity:0;transform:translate(-50%,-50%);transition:opacity .25s;mix-blend-mode:soft-light}
 .c3:hover .sh{opacity:1}
 
@@ -179,6 +237,16 @@ section{position:relative;z-index:1}
 .ps:nth-child(3) .psi{background:rgba(8,145,178,.15)}
 .ps:nth-child(4) .psi{background:rgba(16,185,129,.15)}
 .ps:hover .psi{transform:scale(1.08)}
+/* SVG icon colours */
+.psi svg,.si svg,.ace svg,.wiwrap svg{display:block}
+.ps:nth-child(1) .psi{color:#2563eb}
+.ps:nth-child(2) .psi{color:#7c3aed}
+.ps:nth-child(3) .psi{color:#0891b2}
+.ps:nth-child(4) .psi{color:#059669}
+.si.ib{color:#3b82f6}.si.ip{color:#7c3aed}.si.ig{color:#10b981}
+.ace.ae-b{color:#3b82f6}.ace.ae-g{color:#10b981}.ace.ae-p{color:#7c3aed}.ace.ae-a{color:#d97706}.ace.ae-r{color:#dc2626}.ace.ae-t{color:#0d9488}
+.wc:nth-child(1) .wiwrap{color:#3b82f6}.wc:nth-child(2) .wiwrap{color:#d97706}.wc:nth-child(3) .wiwrap{color:#14b8a6}
+.wc:nth-child(4) .wiwrap{color:#7c3aed}.wc:nth-child(5) .wiwrap{color:#f43f5e}.wc:nth-child(6) .wiwrap{color:#10b981}
 .pst{font-size:14px;font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:8px}
 .psd{font-size:13px;color:var(--muted);line-height:1.72;font-weight:400}
 .pg-num{position:absolute;bottom:-4px;right:8px;font-size:68px;font-weight:800;color:rgba(15,23,42,.04);line-height:1;pointer-events:none;letter-spacing:-4px}
@@ -196,12 +264,12 @@ section{position:relative;z-index:1}
 .sv:nth-child(5) .scorn{background:#6366f1}
 .sv:nth-child(6) .scorn{background:#f43f5e}
 /* per-service hover glow */
-.sv:nth-child(1):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(59,130,246,.22)}
-.sv:nth-child(2):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(124,58,237,.22)}
-.sv:nth-child(3):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(20,184,166,.22)}
-.sv:nth-child(4):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(245,158,11,.22)}
-.sv:nth-child(5):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(99,102,241,.22)}
-.sv:nth-child(6):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(244,63,94,.22)}
+.sv:nth-child(1):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(59,130,246,.18)}
+.sv:nth-child(2):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(124,58,237,.18)}
+.sv:nth-child(3):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(20,184,166,.18)}
+.sv:nth-child(4):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(245,158,11,.18)}
+.sv:nth-child(5):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(99,102,241,.18)}
+.sv:nth-child(6):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(244,63,94,.18)}
 /* per-service border on hover */
 .sv:nth-child(1):hover{border-color:rgba(59,130,246,.35)}
 .sv:nth-child(2):hover{border-color:rgba(124,58,237,.35)}
@@ -249,12 +317,12 @@ section{position:relative;z-index:1}
 .ae-r{background:rgba(239,68,68,.18)}
 .ae-t{background:rgba(20,184,166,.18)}
 /* per-agent hover glow */
-.ac:nth-child(1):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(59,130,246,.22);border-color:rgba(59,130,246,.3)}
-.ac:nth-child(2):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(16,185,129,.22);border-color:rgba(16,185,129,.3)}
-.ac:nth-child(3):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(124,58,237,.22);border-color:rgba(124,58,237,.3)}
-.ac:nth-child(4):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(245,158,11,.22);border-color:rgba(245,158,11,.3)}
-.ac:nth-child(5):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(244,63,94,.22);border-color:rgba(244,63,94,.3)}
-.ac:nth-child(6):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(20,184,166,.22);border-color:rgba(20,184,166,.3)}
+.ac:nth-child(1):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(59,130,246,.18);border-color:rgba(59,130,246,.3)}
+.ac:nth-child(2):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(16,185,129,.18);border-color:rgba(16,185,129,.3)}
+.ac:nth-child(3):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(124,58,237,.18);border-color:rgba(124,58,237,.3)}
+.ac:nth-child(4):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(245,158,11,.18);border-color:rgba(245,158,11,.3)}
+.ac:nth-child(5):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(244,63,94,.18);border-color:rgba(244,63,94,.3)}
+.ac:nth-child(6):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(20,184,166,.18);border-color:rgba(20,184,166,.3)}
 /* per-agent price badge accent */
 .ac:nth-child(1) .acp{background:rgba(59,130,246,.2);border-color:rgba(59,130,246,.3);color:#93c5fd}
 .ac:nth-child(2) .acp{background:rgba(16,185,129,.2);border-color:rgba(16,185,129,.3);color:#6ee7b7}
@@ -348,12 +416,12 @@ section{position:relative;z-index:1}
 .wc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.16,1,.3,1);border-radius:0 0 var(--r) var(--r)}
 .wc:hover::after{transform:scaleX(1)}
 /* per-why hover glow */
-.wc:nth-child(1):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(59,130,246,.2)}
-.wc:nth-child(2):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(245,158,11,.2)}
-.wc:nth-child(3):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(20,184,166,.2)}
-.wc:nth-child(4):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(124,58,237,.2)}
-.wc:nth-child(5):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(244,63,94,.2)}
-.wc:nth-child(6):hover{box-shadow:0 4px 8px rgba(0,0,0,.3),0 16px 48px rgba(16,185,129,.2)}
+.wc:nth-child(1):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(59,130,246,.16)}
+.wc:nth-child(2):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(245,158,11,.16)}
+.wc:nth-child(3):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(20,184,166,.16)}
+.wc:nth-child(4):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(124,58,237,.16)}
+.wc:nth-child(5):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(244,63,94,.16)}
+.wc:nth-child(6):hover{box-shadow:0 4px 16px rgba(0,0,0,.10),0 16px 48px rgba(16,185,129,.16)}
 
 /* TESTIMONIALS */
 .testimonials{padding:120px 0;background:var(--bg-alt)}
@@ -369,20 +437,45 @@ section{position:relative;z-index:1}
 
 /* TEAM */
 .team{padding:120px 0;background:var(--bg)}
-.tg{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:52px}
-.tc{cursor:default;display:flex}
-.tstrip{width:4px;flex-shrink:0;border-radius:var(--r) 0 0 var(--r);transition:width .3s}
-.tc:nth-child(1) .tstrip{background:var(--grad)}
-.tc:nth-child(2) .tstrip{background:linear-gradient(180deg,#7c3aed,#2563eb)}
-.tc:hover .tstrip{width:6px}
-.tbody{padding:32px 28px;display:flex;gap:22px;align-items:flex-start;flex:1;position:relative;z-index:1}
-.tav{width:66px;height:66px;border-radius:15px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;letter-spacing:.5px;transition:transform .35s;box-shadow:0 4px 14px rgba(0,0,0,.1)}
-.tc:hover .tav{transform:scale(1.05)}
-.av-a{background:rgba(59,130,246,.2);color:#60a5fa}
-.av-b{background:rgba(124,58,237,.2);color:#a78bfa}
-.tn{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:4px}
-.tr{font-size:12px;color:#60a5fa;font-weight:600;margin-bottom:14px}
-.tb{font-size:13.5px;color:var(--muted);line-height:1.78;font-weight:400}
+.tg{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:52px}
+.tc{cursor:default;display:flex;flex-direction:column;overflow:hidden}
+/* Coloured header band */
+.tc-head{padding:28px 28px 22px;display:flex;gap:20px;align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);position:relative;z-index:1}
+.tc-head::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.tc:nth-child(1) .tc-head::before{background:linear-gradient(90deg,#3b82f6,#6366f1)}
+.tc:nth-child(2) .tc-head::before{background:linear-gradient(90deg,#7c3aed,#2563eb)}
+/* Subtle bg glow behind avatar */
+.tc-head::after{content:'';position:absolute;width:180px;height:180px;border-radius:50%;opacity:.07;top:-60px;left:-30px;pointer-events:none}
+.tc:nth-child(1) .tc-head::after{background:#3b82f6}
+.tc:nth-child(2) .tc-head::after{background:#7c3aed}
+/* Avatar */
+.tav{width:76px;height:76px;border-radius:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;letter-spacing:.5px;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .3s;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.tc:hover .tav{transform:scale(1.07) rotate(-4deg);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+.tc:nth-child(1) .tav{background:linear-gradient(135deg,#3b82f6,#6366f1);color:#fff}
+.tc:nth-child(2) .tav{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff}
+/* Name + role */
+.tc-meta{flex:1;min-width:0;padding-top:4px}
+.tn{font-size:18px;font-weight:800;color:#0f172a;letter-spacing:-.4px;margin-bottom:5px}
+.tr{font-size:10.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#2563eb;margin-bottom:10px;display:block}
+.tc:nth-child(2) .tr{color:#6d28d9}
+.tc-founder-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:100px}
+.tc:nth-child(1) .tc-founder-badge{background:rgba(59,130,246,.10);border:1px solid rgba(59,130,246,.2);color:#1d4ed8}
+.tc:nth-child(2) .tc-founder-badge{background:rgba(124,58,237,.10);border:1px solid rgba(124,58,237,.2);color:#5b21b6}
+/* Body */
+.tbody{padding:22px 28px 26px;display:flex;flex-direction:column;flex:1;position:relative;z-index:1}
+.tb{font-size:13.5px;color:#475569;line-height:1.82;font-weight:400;margin-bottom:20px}
+/* Skill tags */
+.t-skills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.t-skill{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 12px;font-size:11.5px;color:#475569;font-weight:500;transition:all .2s}
+.tc:hover .t-skill{background:#fff;border-color:#bfdbfe;color:#1d4ed8}
+.tc:nth-child(2):hover .t-skill{border-color:#ddd6fe;color:#5b21b6}
+/* Social links row */
+.t-links{display:flex;gap:8px;padding-top:18px;border-top:1px solid rgba(0,0,0,.07);margin-top:auto}
+.t-link{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:#64748b;padding:7px 16px;border-radius:8px;background:#f8fafc;border:1px solid #e2e8f0;transition:all .2s;text-decoration:none}
+.t-link:hover{background:#eff6ff;border-color:#bfdbfe;color:#2563eb;transform:translateY(-1px)}
+.tc:nth-child(2) .t-link:hover{background:#f5f3ff;border-color:#ddd6fe;color:#5b21b6}
+/* Remove old strip — not used */
+.tstrip{display:none}
 
 /* CTA */
 .cta{padding:140px 0;text-align:center;position:relative;z-index:1;overflow:hidden;background:var(--bg)}
@@ -527,10 +620,10 @@ footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:64px 
       </div>
     </div>
     <div class="pg">
-      <div class="ps c3 r"><div class="sh"></div><div class="pband"></div><div class="pbody"><div class="psn">Step 01</div><div class="psi">🔍</div><div class="pst">Requirements Deep-Dive</div><p class="psd">We sit with your team to map out how work actually flows — interviews, process audits, bottleneck mapping.</p><div class="pg-num">01</div></div></div>
-      <div class="ps c3 r"><div class="sh"></div><div class="pband"></div><div class="pbody"><div class="psn">Step 02</div><div class="psi">🧭</div><div class="pst">Opportunity Identification</div><p class="psd">We identify exactly where AI agents will eliminate friction, save hours, and compound efficiency gains.</p><div class="pg-num">02</div></div></div>
-      <div class="ps c3 r"><div class="sh"></div><div class="pband"></div><div class="pbody"><div class="psn">Step 03</div><div class="psi">⚙️</div><div class="pst">Agent Build &amp; Integration</div><p class="psd">Custom agents built for your stack — not generic templates. Seamless integration with your existing tools.</p><div class="pg-num">03</div></div></div>
-      <div class="ps c3 r"><div class="sh"></div><div class="pband"></div><div class="pbody"><div class="psn">Step 04</div><div class="psi">📈</div><div class="pst">Launch &amp; Iterate</div><p class="psd">Go live with full support. We monitor, refine, and expand your AI infrastructure as your team grows.</p><div class="pg-num">04</div></div></div>
+      <div class="ps c3 r"><div class="sh"></div><div class="pband"></div><div class="pbody"><div class="psn">Step 01</div><div class="psi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div class="pst">Requirements Deep-Dive</div><p class="psd">We sit with your team to map out how work actually flows — interviews, process audits, bottleneck mapping.</p><div class="pg-num">01</div></div></div>
+      <div class="ps c3 r"><div class="sh"></div><div class="pband"></div><div class="pbody"><div class="psn">Step 02</div><div class="psi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div><div class="pst">Opportunity Identification</div><p class="psd">We identify exactly where AI agents will eliminate friction, save hours, and compound efficiency gains.</p><div class="pg-num">02</div></div></div>
+      <div class="ps c3 r"><div class="sh"></div><div class="pband"></div><div class="pbody"><div class="psn">Step 03</div><div class="psi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><div class="pst">Agent Build &amp; Integration</div><p class="psd">Custom agents built for your stack — not generic templates. Seamless integration with your existing tools.</p><div class="pg-num">03</div></div></div>
+      <div class="ps c3 r"><div class="sh"></div><div class="pband"></div><div class="pbody"><div class="psn">Step 04</div><div class="psi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="pst">Launch &amp; Iterate</div><p class="psd">Go live with full support. We monitor, refine, and expand your AI infrastructure as your team grows.</p><div class="pg-num">04</div></div></div>
     </div>
   </div>
 </section>
@@ -544,12 +637,12 @@ footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:64px 
       <p class="bmd">From $50 automations to complex multi-agent systems — we meet you where you are.</p>
     </div>
     <div class="sg">
-      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ib">💡</div><div class="svt">AI Agent Creation</div><p class="svd">Purpose-built AI agents that handle specific, repeatable tasks — from email drafting and data extraction to customer response and internal reporting.</p><div class="tags"><span class="tag">Custom LLM Agents</span><span class="tag">Task Automation</span><span class="tag">From $50</span></div></div></div>
-      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ip">🔀</div><div class="svt">Workflow Automation</div><p class="svd">We map your current processes and automate the repetitive work — connecting your tools, eliminating manual handoffs, letting your team focus on what matters.</p><div class="tags"><span class="tag">Process Mapping</span><span class="tag">Tool Integration</span><span class="tag">No-code + Code</span></div></div></div>
-      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ig">🚀</div><div class="svt">AI Adoption Consulting</div><p class="svd">Not sure where AI fits? We conduct a structured analysis of your operations and deliver a prioritised roadmap of high-impact AI opportunities.</p><div class="tags"><span class="tag">Opportunity Audit</span><span class="tag">AI Roadmap</span><span class="tag">Team Enablement</span></div></div></div>
-      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ib">🧠</div><div class="svt">Custom AI Integrations</div><p class="svd">We plug AI intelligence directly into your existing software stack — CRMs, ERPs, communication tools, databases — without rebuilding your infrastructure.</p><div class="tags"><span class="tag">API Integrations</span><span class="tag">CRM / ERP</span><span class="tag">Existing Stack</span></div></div></div>
-      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ip">📊</div><div class="svt">Intelligent Reporting</div><p class="svd">Transform raw data into AI-generated insights. Automated dashboards, smart summaries, and agent-driven analysis that give leadership faster answers.</p><div class="tags"><span class="tag">Data Agents</span><span class="tag">Auto Reports</span><span class="tag">Insight Pipelines</span></div></div></div>
-      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ig">🗨️</div><div class="svt">AI-Powered Communication</div><p class="svd">Deploy conversational agents for internal support, customer FAQs, and onboarding flows — trained on your company's knowledge and tone of voice.</p><div class="tags"><span class="tag">Chatbots</span><span class="tag">Internal Assistants</span><span class="tag">Knowledge Agents</span></div></div></div>
+      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ib"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div><div class="svt">AI Agent Creation</div><p class="svd">Purpose-built AI agents that handle specific, repeatable tasks — from email drafting and data extraction to customer response and internal reporting.</p><div class="tags"><span class="tag">Custom LLM Agents</span><span class="tag">Task Automation</span><span class="tag">From $50</span></div></div></div>
+      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div><div class="svt">Workflow Automation</div><p class="svd">We map your current processes and automate the repetitive work — connecting your tools, eliminating manual handoffs, letting your team focus on what matters.</p><div class="tags"><span class="tag">Process Mapping</span><span class="tag">Tool Integration</span><span class="tag">No-code + Code</span></div></div></div>
+      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ig"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="svt">AI Adoption Consulting</div><p class="svd">Not sure where AI fits? We conduct a structured analysis of your operations and deliver a prioritised roadmap of high-impact AI opportunities.</p><div class="tags"><span class="tag">Opportunity Audit</span><span class="tag">AI Roadmap</span><span class="tag">Team Enablement</span></div></div></div>
+      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ib"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg></div><div class="svt">Custom AI Integrations</div><p class="svd">We plug AI intelligence directly into your existing software stack — CRMs, ERPs, communication tools, databases — without rebuilding your infrastructure.</p><div class="tags"><span class="tag">API Integrations</span><span class="tag">CRM / ERP</span><span class="tag">Existing Stack</span></div></div></div>
+      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div><div class="svt">Intelligent Reporting</div><p class="svd">Transform raw data into AI-generated insights. Automated dashboards, smart summaries, and agent-driven analysis that give leadership faster answers.</p><div class="tags"><span class="tag">Data Agents</span><span class="tag">Auto Reports</span><span class="tag">Insight Pipelines</span></div></div></div>
+      <div class="sv c3 r"><div class="sh"></div><div class="scorn"></div><div class="svin"><div class="si ig"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="svt">AI-Powered Communication</div><p class="svd">Deploy conversational agents for internal support, customer FAQs, and onboarding flows — trained on your company's knowledge and tone of voice.</p><div class="tags"><span class="tag">Chatbots</span><span class="tag">Internal Assistants</span><span class="tag">Knowledge Agents</span></div></div></div>
     </div>
   </div>
 </section>
@@ -565,17 +658,17 @@ footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:64px 
       </div>
     </div>
     <div class="ag">
-      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-b">✉️</div><div class="acm"><div class="acn">InboxIQ</div><div class="acc">Email Triage &amp; Response</div></div><div class="acp">$50</div></div><div class="acb"><p class="acd">Reads incoming emails, classifies by intent, drafts context-aware replies, and routes urgent messages to the right person — without human input.</p><ul class="acf"><li>Classifies: support, sales, billing, spam</li><li>Drafts replies in your company tone</li><li>Auto-routes to correct team member</li><li>Flags urgent or sensitive threads</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Interaction</span></div><div class="dbody"><div class="dr"><span class="drole">Email</span><span class="dtxt">Hi, our invoice #4421 is overdue. Can someone look into this?</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">Classified: Billing · High Priority · Reply drafted + routed to Finance ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">Gmail</span><span class="sp">Outlook</span><span class="sp">Slack</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
+      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-b"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div class="acm"><div class="acn">InboxIQ</div><div class="acc">Email Triage &amp; Response</div></div><div class="acp">$50</div></div><div class="acb"><p class="acd">Reads incoming emails, classifies by intent, drafts context-aware replies, and routes urgent messages to the right person — without human input.</p><ul class="acf"><li>Classifies: support, sales, billing, spam</li><li>Drafts replies in your company tone</li><li>Auto-routes to correct team member</li><li>Flags urgent or sensitive threads</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Interaction</span></div><div class="dbody"><div class="dr"><span class="drole">Email</span><span class="dtxt">Hi, our invoice #4421 is overdue. Can someone look into this?</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">Classified: Billing · High Priority · Reply drafted + routed to Finance ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">Gmail</span><span class="sp">Outlook</span><span class="sp">Slack</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
 
-      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-g">🗒️</div><div class="acm"><div class="acn">MeetMind</div><div class="acc">Meeting Notes &amp; Actions</div></div><div class="acp">$50</div></div><div class="acb"><p class="acd">Joins calls, transcribes conversation, extracts key decisions and action items, and posts a clean summary to Slack or Notion seconds after the call ends.</p><ul class="acf"><li>Auto-joins scheduled meetings</li><li>Produces clean formatted summaries</li><li>Extracts owners &amp; deadlines per action</li><li>Posts to Slack / Notion automatically</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Output</span></div><div class="dbody"><div class="dr"><span class="drole">Call</span><span class="dtxt">45-min product review, 6 attendees</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">Summary sent · 4 actions created · Owners assigned · Posted to #product ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">Zoom</span><span class="sp">G Meet</span><span class="sp">Notion</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
+      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-g"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div class="acm"><div class="acn">MeetMind</div><div class="acc">Meeting Notes &amp; Actions</div></div><div class="acp">$50</div></div><div class="acb"><p class="acd">Joins calls, transcribes conversation, extracts key decisions and action items, and posts a clean summary to Slack or Notion seconds after the call ends.</p><ul class="acf"><li>Auto-joins scheduled meetings</li><li>Produces clean formatted summaries</li><li>Extracts owners &amp; deadlines per action</li><li>Posts to Slack / Notion automatically</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Output</span></div><div class="dbody"><div class="dr"><span class="drole">Call</span><span class="dtxt">45-min product review, 6 attendees</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">Summary sent · 4 actions created · Owners assigned · Posted to #product ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">Zoom</span><span class="sp">G Meet</span><span class="sp">Notion</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
 
-      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-p">🎧</div><div class="acm"><div class="acn">SupportPilot</div><div class="acc">Customer Support Agent</div></div><div class="acp">$29</div></div><div class="acb"><p class="acd">Handles tier-1 customer queries 24/7, trained on your product docs. Resolves common issues instantly and escalates complex ones with full context.</p><ul class="acf"><li>Trained on your knowledge base &amp; docs</li><li>Handles returns, billing, product Q&amp;A</li><li>Escalates with full conversation summary</li><li>Learns from resolved tickets over time</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Interaction</span></div><div class="dbody"><div class="dr"><span class="drole">User</span><span class="dtxt">My subscription renewal failed. What do I do?</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">Checked account · Found expired card · Sent update link · Resolved ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">Intercom</span><span class="sp">Zendesk</span><span class="sp">Web</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
+      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-p"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div><div class="acm"><div class="acn">SupportPilot</div><div class="acc">Customer Support Agent</div></div><div class="acp">$29</div></div><div class="acb"><p class="acd">Handles tier-1 customer queries 24/7, trained on your product docs. Resolves common issues instantly and escalates complex ones with full context.</p><ul class="acf"><li>Trained on your knowledge base &amp; docs</li><li>Handles returns, billing, product Q&amp;A</li><li>Escalates with full conversation summary</li><li>Learns from resolved tickets over time</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Interaction</span></div><div class="dbody"><div class="dr"><span class="drole">User</span><span class="dtxt">My subscription renewal failed. What do I do?</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">Checked account · Found expired card · Sent update link · Resolved ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">Intercom</span><span class="sp">Zendesk</span><span class="sp">Web</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
 
-      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-a">📊</div><div class="acm"><div class="acn">ReportBot</div><div class="acc">Automated Reporting Agent</div></div><div class="acp">$19</div></div><div class="acb"><p class="acd">Pulls data from spreadsheets, CRM, or databases on schedule and generates a plain-English performance report sent directly to leadership — zero manual effort.</p><ul class="acf"><li>Connects to sheets, SQL, CRM data</li><li>Writes narrative summaries, not just numbers</li><li>Highlights anomalies and WoW changes</li><li>Delivers via email or Slack on schedule</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Output</span></div><div class="dbody"><div class="dr"><span class="drole">Data</span><span class="dtxt">Weekly CRM + revenue export</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">"Revenue +12% WoW. 3 deals stalled in stage 4 — follow-up recommended." ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">Sheets</span><span class="sp">HubSpot</span><span class="sp">Airtable</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
+      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="acm"><div class="acn">ReportBot</div><div class="acc">Automated Reporting Agent</div></div><div class="acp">$19</div></div><div class="acb"><p class="acd">Pulls data from spreadsheets, CRM, or databases on schedule and generates a plain-English performance report sent directly to leadership — zero manual effort.</p><ul class="acf"><li>Connects to sheets, SQL, CRM data</li><li>Writes narrative summaries, not just numbers</li><li>Highlights anomalies and WoW changes</li><li>Delivers via email or Slack on schedule</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Output</span></div><div class="dbody"><div class="dr"><span class="drole">Data</span><span class="dtxt">Weekly CRM + revenue export</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">"Revenue +12% WoW. 3 deals stalled in stage 4 — follow-up recommended." ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">Sheets</span><span class="sp">HubSpot</span><span class="sp">Airtable</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
 
-      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-r">🎯</div><div class="acm"><div class="acn">LeadRadar</div><div class="acc">Lead Qualification Agent</div></div><div class="acp">$49</div></div><div class="acb"><p class="acd">Monitors inbound form fills, enriches lead data from LinkedIn, scores each lead against your ICP, and pushes a qualification brief to CRM before your sales team wakes up.</p><ul class="acf"><li>Enriches leads with company &amp; role data</li><li>Scores against your ideal customer profile</li><li>Writes a qualification brief per lead</li><li>Pushes hot leads to CRM + notifies rep</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Output</span></div><div class="dbody"><div class="dr"><span class="drole">Lead</span><span class="dtxt">James · Head of Ops · 400-person logistics firm</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">ICP Match: 94% · Score: Hot · Brief in HubSpot · Rep notified ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">HubSpot</span><span class="sp">LinkedIn</span><span class="sp">Typeform</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
+      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-r"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><div class="acm"><div class="acn">LeadRadar</div><div class="acc">Lead Qualification Agent</div></div><div class="acp">$49</div></div><div class="acb"><p class="acd">Monitors inbound form fills, enriches lead data from LinkedIn, scores each lead against your ICP, and pushes a qualification brief to CRM before your sales team wakes up.</p><ul class="acf"><li>Enriches leads with company &amp; role data</li><li>Scores against your ideal customer profile</li><li>Writes a qualification brief per lead</li><li>Pushes hot leads to CRM + notifies rep</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Output</span></div><div class="dbody"><div class="dr"><span class="drole">Lead</span><span class="dtxt">James · Head of Ops · 400-person logistics firm</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">ICP Match: 94% · Score: Hot · Brief in HubSpot · Rep notified ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">HubSpot</span><span class="sp">LinkedIn</span><span class="sp">Typeform</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
 
-      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-t">📄</div><div class="acm"><div class="acn">DocuDraft</div><div class="acc">Contract &amp; Document Agent</div></div><div class="acp">$39</div></div><div class="acb"><p class="acd">Takes a brief from your sales or ops team and generates first drafts of proposals, SOWs, or NDAs — formatted to your brand template and ready for review in minutes.</p><ul class="acf"><li>Generates proposals from deal context</li><li>Populates your branded templates</li><li>Produces NDAs and SOWs on request</li><li>Sends for e-signature automatically</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Interaction</span></div><div class="dbody"><div class="dr"><span class="drole">Input</span><span class="dtxt">New client: Apex Retail. 3-month project. $18k. CRM + automation.</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">Proposal drafted · Branded PDF ready · DocuSign link sent ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">DocuSign</span><span class="sp">Notion</span><span class="sp">G Docs</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
+      <div class="ac c3 r"><div class="sh"></div><div class="ach"><div class="ace ae-t"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div><div class="acm"><div class="acn">DocuDraft</div><div class="acc">Contract &amp; Document Agent</div></div><div class="acp">$39</div></div><div class="acb"><p class="acd">Takes a brief from your sales or ops team and generates first drafts of proposals, SOWs, or NDAs — formatted to your brand template and ready for review in minutes.</p><ul class="acf"><li>Generates proposals from deal context</li><li>Populates your branded templates</li><li>Produces NDAs and SOWs on request</li><li>Sends for e-signature automatically</li></ul></div><div class="demo"><div class="dbar"><span class="dd dd-r"></span><span class="dd dd-y"></span><span class="dd dd-g"></span><span class="dtit">Sample Interaction</span></div><div class="dbody"><div class="dr"><span class="drole">Input</span><span class="dtxt">New client: Apex Retail. 3-month project. $18k. CRM + automation.</span></div><div class="dr"><span class="drole">Agent</span><span class="dtxt hi">Proposal drafted · Branded PDF ready · DocuSign link sent ✓</span></div></div></div><div class="acft"><div class="acst"><span class="sp">DocuSign</span><span class="sp">Notion</span><span class="sp">G Docs</span></div><div class="astat"><span class="sdot"></span>Ready to deploy</div></div></div>
     </div>
   </div>
 </section>
@@ -605,12 +698,12 @@ footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:64px 
       <p class="bmd">Most vendors sell you tools. We sell outcomes.</p>
     </div>
     <div class="wg">
-      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><span class="wi">🎯</span></div><div class="wt">Analysis First, Always</div><p class="wb">We refuse to build until we understand your business. Every agent is grounded in a real pain point, not a feature checklist.</p><div class="wnum">1</div></div></div>
-      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><span class="wi">⚡</span></div><div class="wt">Enterprise Speed, Startup Agility</div><p class="wb">As a two-person team, we move fast and stay accountable. You always speak directly to the people building your solution.</p><div class="wnum">2</div></div></div>
-      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><span class="wi">💎</span></div><div class="wt">Built for Mid-Market Budgets</div><p class="wb">AI automation shouldn't need a VC budget. Our pricing lets 100–2,000 employee companies compete with the biggest players.</p><div class="wnum">3</div></div></div>
-      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><span class="wi">🔗</span></div><div class="wt">Works With Your Existing Stack</div><p class="wb">No ripping and replacing. We integrate with what you already use — Salesforce, HubSpot, Notion, Slack, or bespoke tools.</p><div class="wnum">4</div></div></div>
-      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><span class="wi">📐</span></div><div class="wt">Zero Generic Templates</div><p class="wb">Every agent is custom-built for your team's context, terminology, and workflows. Cookie-cutter bots don't deliver real ROI.</p><div class="wnum">5</div></div></div>
-      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><span class="wi">🤝</span></div><div class="wt">Long-Term Partnership</div><p class="wb">We're not disappearing after launch. We stay involved, iterate with you, and grow your AI infrastructure as needs evolve.</p><div class="wnum">6</div></div></div>
+      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><div class="wt">Analysis First, Always</div><p class="wb">We refuse to build until we understand your business. Every agent is grounded in a real pain point, not a feature checklist.</p><div class="wnum">1</div></div></div>
+      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="wt">Enterprise Speed, Startup Agility</div><p class="wb">As a two-person team, we move fast and stay accountable. You always speak directly to the people building your solution.</p><div class="wnum">2</div></div></div>
+      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div><div class="wt">Built for Mid-Market Budgets</div><p class="wb">AI automation shouldn't need a VC budget. Our pricing lets 100–2,000 employee companies compete with the biggest players.</p><div class="wnum">3</div></div></div>
+      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div class="wt">Works With Your Existing Stack</div><p class="wb">No ripping and replacing. We integrate with what you already use — Salesforce, HubSpot, Notion, Slack, or bespoke tools.</p><div class="wnum">4</div></div></div>
+      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div><div class="wt">Zero Generic Templates</div><p class="wb">Every agent is custom-built for your team's context, terminology, and workflows. Cookie-cutter bots don't deliver real ROI.</p><div class="wnum">5</div></div></div>
+      <div class="wc c3 r"><div class="sh"></div><div class="wcin"><div class="wiwrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="wt">Long-Term Partnership</div><p class="wb">We're not disappearing after launch. We stay involved, iterate with you, and grow your AI infrastructure as needs evolve.</p><div class="wnum">6</div></div></div>
     </div>
   </div>
 </section>
@@ -624,8 +717,55 @@ footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:64px 
       <p class="bmd">Two builders combining deep technical expertise with real-world business sense.</p>
     </div>
     <div class="tg">
-      <div class="tc c3 r"><div class="sh"></div><div class="tstrip"></div><div class="tbody"><div class="tav av-a">AR</div><div><div class="tn">Ajay Rajput</div><div class="tr">Co-Founder · Agent Design &amp; LLM Engineering</div><p class="tb">Specialises in designing and building custom AI agents and multi-step automation pipelines. Brings deep experience translating complex business requirements into intelligent, scalable systems that integrate seamlessly with enterprise workflows.</p></div></div></div>
-      <div class="tc c3 r"><div class="sh"></div><div class="tstrip"></div><div class="tbody"><div class="tav av-b">AS</div><div><div class="tn">Ananya Sharma</div><div class="tr">Co-Founder · Process Analysis &amp; Client Success</div><p class="tb">Leads requirements discovery and operational analysis. Works directly with client teams to uncover automation opportunities, map workflows, and ensure every solution delivers measurable, lasting business value.</p></div></div></div>
+      <div class="tc c3 r">
+        <div class="sh"></div>
+        <div class="tc-head">
+          <div class="tav">AR</div>
+          <div class="tc-meta">
+            <div class="tn">Ajay Rajput</div>
+            <div class="tr">LLM Engineering &amp; Agent Design</div>
+            <span class="tc-founder-badge"><svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>Co-Founder</span>
+          </div>
+        </div>
+        <div class="tbody">
+          <p class="tb">Specialises in designing and building custom AI agents and multi-step automation pipelines. Brings deep experience translating complex business requirements into intelligent, scalable systems that integrate seamlessly with enterprise workflows.</p>
+          <div class="t-skills">
+            <span class="t-skill">LLM Engineering</span>
+            <span class="t-skill">AI Agents</span>
+            <span class="t-skill">Automation Pipelines</span>
+            <span class="t-skill">Enterprise Integration</span>
+          </div>
+          <div class="t-links">
+            <a href="#" class="t-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+            <a href="#contact" class="t-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Get in Touch</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc c3 r">
+        <div class="sh"></div>
+        <div class="tc-head">
+          <div class="tav">AS</div>
+          <div class="tc-meta">
+            <div class="tn">Ananya Sharma</div>
+            <div class="tr">Process Analysis &amp; Client Success</div>
+            <span class="tc-founder-badge"><svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>Co-Founder</span>
+          </div>
+        </div>
+        <div class="tbody">
+          <p class="tb">Leads requirements discovery and operational analysis. Works directly with client teams to uncover automation opportunities, map workflows, and ensure every solution delivers measurable, lasting business value.</p>
+          <div class="t-skills">
+            <span class="t-skill">Process Mapping</span>
+            <span class="t-skill">Client Strategy</span>
+            <span class="t-skill">Workflow Analysis</span>
+            <span class="t-skill">Business Value Design</span>
+          </div>
+          <div class="t-links">
+            <a href="#" class="t-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+            <a href="#contact" class="t-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Get in Touch</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -638,8 +778,8 @@ footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:64px 
       <h2>Ready to See Where AI<br>Fits in Your Business?</h2>
       <p>Book a 30-minute call. We'll listen to how your team works, then show you exactly where intelligent agents can unlock speed, accuracy, and scale.</p>
       <div class="ctabtns">
-        <div class="mw"><a href="mailto:hello@veloxiq.ai" class="mb ms-w">Book a Free Call →</a></div>
-        <div class="mw"><a href="mailto:hello@veloxiq.ai" class="mb mo-w">Send Us a Message</a></div>
+        <div class="mw"><a href="mailto:veloxiq.agent@gmail.com" class="mb ms-w">Book a Free Call →</a></div>
+        <div class="mw"><a href="mailto:veloxiq.agent@gmail.com" class="mb mo-w">Send Us a Message</a></div>
       </div>
     </div>
   </div>
@@ -670,7 +810,7 @@ footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:64px 
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
-      <a href="mailto:hello@veloxiq.ai">hello@veloxiq.ai</a>
+      <a href="mailto:veloxiq.agent@gmail.com">veloxiq.agent@gmail.com</a>
       <a href="#contact">Book a Discovery Call</a>
     </div>
   </div>
